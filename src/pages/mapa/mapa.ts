@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the MapaPage page.
@@ -8,18 +8,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-mapa',
   templateUrl: 'mapa.html',
 })
 export class MapaPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  lat: number;
+  lng: number;
+  constructor(public navParams: NavParams, private viewCtrl: ViewController) {
+    let coordsArr = navParams.get('coords').split(',');
+    this.lat = Number(coordsArr[0].replace('geo:', ''));
+    this.lng = Number(coordsArr[1]);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapaPage');
   }
 
+  cerrarMapa(){
+    this.viewCtrl.dismiss();
+  }
 }

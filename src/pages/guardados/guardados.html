@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-list *ngFor="let data of historial; let i = index">
-    <button ion-item (click)="abrirScan(i)" block>
+    <button ion-item detail-none (click)="abrirScan(i)" block>
       {{ data.info }}
       <p>{{ data.tipo }} </p>
     </button>

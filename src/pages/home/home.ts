@@ -17,7 +17,6 @@ export class HomePage {
 
   scan() {
     if(!this.platform.is('cordova')) {
-      this.historialService.addHistorial('http://google.es');
       return;
     }
     this.barcodeScanner.scan().then(barcodeData => {
