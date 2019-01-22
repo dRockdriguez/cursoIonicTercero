@@ -15,6 +15,9 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 //Mapas
 import { AgmCoreModule } from '@agm/core';
 
+
+import { Contacts } from '@ionic-native/contacts';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +47,8 @@ import { AgmCoreModule } from '@agm/core';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BarcodeScanner,
     HistorialProvider,
-    InAppBrowser
+    InAppBrowser,
+    Contacts
   ]
 })
 export class AppModule {}
